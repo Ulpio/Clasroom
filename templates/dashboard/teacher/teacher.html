@@ -57,10 +57,10 @@
     <img src="https://www.pngarts.com/files/11/Avatar-PNG-Transparent-Image.png" class="img" alt="">
   
         <h4>{{ r.name }}</h4>
-        <span> Class : {{ r.unit }}</span><br>
-        <span> Code : <strong>{{ r.code }}</strong> </span><br>
+        <span> Turma : {{ r.unit }}</span><br>
+        <span> Código : <strong>{{ r.code }}</strong> </span><br>
 
-        <a href="{% url 'single' r.id %}"> View Class </a>
+        <a href="{% url 'single' r.id %}"> Ver Turma </a>
 </div>
 
 {% endfor %}

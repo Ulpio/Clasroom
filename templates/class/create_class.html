@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
-{% block title %} Create Class | Meet Classroom {% endblock %}
+{% block title %} Criar Turma {% endblock %}
 
 {% block content %}
 <div class="row" style="margin: 0 auto;">
@@ -7,19 +7,19 @@
     
     
     
-        <h2 class="text-center">Create Class</h2>
+        <h2 class="text-center">Criar uma turma</h2>
         <br>
 <form action="{% url 'create_class' %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
-        <input type="text" name="name" class="form-control" placeholder="Write the Class Name" required>
+        <input type="text" name="name" class="form-control" placeholder="Insira o nome da turma" required>
     </div>
     <div class="form-group">
-        <input type="text" name="unit" class="form-control" placeholder="Give a Class Unit" required>
+        <input type="text" name="unit" class="form-control" placeholder="Insira o código da turma" required>
     </div>
     
-    <textarea name="detail" id="" class="form-control" cols="30" rows="10" placeholder="Describe more about the Class" required></textarea>
-    <button type="submit" class="btn btn-primary " style="width:100%; margin: 10px auto;" >Create</button>
+    <textarea name="detail" id="" class="form-control" cols="30" rows="10" placeholder="Descreva sobre a turma" required></textarea>
+    <button type="submit" class="btn btn-primary " style="width:100%; margin: 10px auto;" >Criar</button>
 </form>
 
 </div>

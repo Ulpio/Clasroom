@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-6" style="padding: 30px; margin-top:20px; " >
-            <h2> Sign Up as A Teacher</h2>
+            <h2>Cadastro de Professor</h2>
             <br>
 
 
@@ -29,30 +29,27 @@
                     <form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-group">
-                
-                            <input type="text" name="name" class="form-control" id="email" placeholder="Type Your Name" required>
+                            <input type="text" name="name" class="form-control" id="email" placeholder="Nome" required>
                         </div>
                         <div class="form-group">
                      
-                            <input type="email" name="username" class="form-control" id="email" placeholder="Type Your Email" required>
+                            <input type="email" name="username" class="form-control" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                           
-                            <input type="password" name="password1" class="form-control" id="password1" placeholder="Password" required>
+                            <input type="password" name="password1" class="form-control" id="password1" placeholder="Senha" required>
                         </div>
                         <div class="form-group">
             
-                            <input type="password" name="password2" class="form-control" id="password2" placeholder="Confirm Password" required>
+                            <input type="password" name="password2" class="form-control" id="password2" placeholder="Confirme a Senha" required>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary " style="width:100%; margin: 0 auto;" >Sign Up</button>
+                        <button type="submit" class="btn btn-primary " style="width:100%; margin: 0 auto;" >Cadastre-se</button>
                     </form>
                     <hr>
                     <div class="text-center">
-                        Do you already have an account? <a href="{% url 'login' %}">Login here</a>
+                        Já tem uma conta? <a href="{% url 'login' %}">Faça Login</a>
                     </div>
-
-
                     <!--
                                             <div class="text-center">
                         or
@@ -66,7 +63,7 @@
 
         </div>
         <div class="col-6" style="padding: 30px; background-color: #ebf4fb; margin-top:20px; border-radius: 10px; text-align: center; ">
-            <h2> Sign Up as A Student</h2>
+            <h2> Cadastro de Estudante</h2>
             <br>
 
 
@@ -74,31 +71,29 @@
                 {% csrf_token %}
                 <div class="form-group">
     
-                    <input type="text" name="name" class="form-control" id="email" placeholder="Type Your Name" required>
+                    <input type="text" name="name" class="form-control" id="email" placeholder="Nome" required>
                 </div>
                 <div class="form-group">
  
-                    <input type="email" name="username" class="form-control" id="email" placeholder="Type Your Email" required>
+                    <input type="email" name="username" class="form-control" id="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
    
-                    <input type="password" name="password1" class="form-control" id="password1" placeholder="Type Password" required>
+                    <input type="password" name="password1" class="form-control" id="password1" placeholder="Senha" required>
                 </div>
                 <div class="form-group">
          
-                    <input type="password" name="password2" class="form-control" id="password2" placeholder="Confirm Your Password" required>
+                    <input type="password" name="password2" class="form-control" id="password2" placeholder="Confirme a Senha" required>
                 </div>
                 <div class="form-group">
                     <input type="file" name="image" class="form-control" id="image" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width:100%; margin:0 auto;" >Sign Up</button>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin:0 auto;" >Cadastre-se</button>
             </form>
             <hr>
             <div class="text-center">
-                Do you already have an account? <a href="{% url 'login' %}">Login here</a>
-            </div>
-
-
+                Já tem uma conta? <a href="{% url 'login' %}">Faça Login</a>
+            </dv>
         </div>
     </div>
 {% endblock %}

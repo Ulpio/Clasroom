@@ -43,9 +43,9 @@
                             <a href="" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus"></i></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {% if user.is_teacher %}
-                                <a class="dropdown-item" href="#">Create Class</a>
+                                <a class="dropdown-item" href="#">Crie uma Turma</a>
                                 {% else %}
-                                <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#joinClass">Join Class</a>
+                                <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#joinClass">Acesse uma turma</a>
                                 {% endif %}
                               </div>
                         </li>
@@ -54,7 +54,7 @@
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                            <a class="nav-link" href="{% url 'signup' %}">Cadastre-se</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">Login</a>
@@ -63,16 +63,14 @@
                 </ul>
                 </div>
                 </div>
-
         </nav>
-    
-    
+        
     <!-- Modal -->
     <div class="modal fade" id="joinClass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle"> Paste The Code to join</h5>
+              <h5 class="modal-title" id="exampleModalCenterTitle"> Cole o código para participar</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -82,11 +80,11 @@
                 <form action="{% url 'join' %}" method="POST">
                     <div class="form-group">
                       {% csrf_token %}
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="code" aria-describedby="emailHelp" placeholder="Enter the Code">
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="code" aria-describedby="emailHelp" placeholder="Insira o código">
                       
                     </div>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Join</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
                   </form>
     
             </div>
@@ -116,18 +114,8 @@
 
   <div class="col-4">
     <h5 style="color:rgb(49, 48, 48);">Zooming CLS</h5>
+
   </div>
-      <div class="col-5"> <p>Made by <strong> Md. Nazrul Islam Yeasin</strong> | Verson : <strong> 1.0.1</strong></p></div>
-
-    
-  
-    <div class="col-3">
-      <p> Source Code on Github  <a href="https://github.com/yeazin/Zooming-cls"><i class="fab fa-github"></i></a>  </p>
-    </div>
-    
-
-
-    </div>
   </div>
   </div>
 </footer>

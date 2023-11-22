@@ -4,10 +4,10 @@
 
 
 <div class="navbar-nav ml-auto">
-    <a class="nav-item nav-link active" href="{% url 'single' room.id %}"><i class="fas fa-bars"></i>  Stream<span class="sr-only">(current)</span></a>
-    <a class="nav-item nav-link" href="#"><i class="fas fa-file-signature"></i> Files</a>
-    <a class="nav-item nav-link" href="{% url 'people' room.id %}"> <i class="fas fa-users"></i> People</a>
-    <a class="nav-item nav-link" href=""  data-toggle="modal" data-target="#exampleModal">Leave Class <i class="fas fa-sign-out-alt"></i> </a>
+    <a class="nav-item nav-link active" href="{% url 'single' room.id %}"><i class="fas fa-bars"></i>  Principal<span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" href="#"><i class="fas fa-file-signature"></i> Arquivos</a>
+    <a class="nav-item nav-link" href="{% url 'people' room.id %}"> <i class="fas fa-users"></i>Pessoas</a>
+    <a class="nav-item nav-link" href=""  data-toggle="modal" data-target="#exampleModal">Sair da Turma <i class="fas fa-sign-out-alt"></i> </a>
 
   </div>
 
@@ -72,8 +72,8 @@
             <div class="row">
               <div class="col-3">
                 <div class="filebox ">
-                  <h5>Upcomming Files</h5>
-                  <p> No File yet</p>
+                  <h5>Arquivos recentes</h5>
+                  <p> Ainda sem arquivos</p>
                   <a href="" class="text-right"> View All </a>
                 </div>
               </div>
@@ -110,8 +110,8 @@
                     <div class="card card-body">
                       <form action="{% url 'comment_create' s.id %}" method="POST" style="display: flex;">
                         {% csrf_token %}
-                        <input type="text" name="comment" class="form-control" placeholder="Add Comment" style="margin-right:3px;">
-                        <button class="btn btn-primary btn-sm" type="submit"> Add Comment </button>
+                        <input type="text" name="comment" class="form-control" placeholder="Adicionar Comentário" style="margin-right:3px;">
+                        <button class="btn btn-primary btn-sm" type="submit"> Adicionar comentário </button>
                       </form>
                     </div>
                   </div>
@@ -138,17 +138,17 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> Leave Already ?</h5>
+          <h5 class="modal-title" id="exampleModalLabel"> Já quer sair ?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <h4> Are You sure, You want to leave the Class </h4>
+          <h4> Voce tem certeza, Quer sair da turma? </h4>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" data-dismiss="modal">No, I am not</button>
-          <a href="{% url 'leave' room.id %}" class="btn btn-danger"> Yes I am</a>
+          <button type="button" class="btn btn-info" data-dismiss="modal">Não, eu quero ficar</button>
+          <a href="{% url 'leave' room.id %}" class="btn btn-danger"> Sim, quero sair</a>
         </div>
       </div>
     </div>

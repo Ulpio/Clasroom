@@ -7,7 +7,7 @@
 
 
 
-    <h2 class="text-center"> Send Email </h2>
+    <h2 class="text-center"> Enviar Email </h2>
     <br>
     <div class="messages"  >
         {% for message in messages %}
@@ -24,10 +24,10 @@
     <form action="{% url 'send' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
-            <input type="text" class="form-control" name="code" placeholder="Type Seven Characters Code here" required>
+            <input type="text" class="form-control" name="code" placeholder="Digite o código da" required>
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Type the @Email you want to send" required>
+            <input type="email" class="form-control" name="email" placeholder="Digite o Email que quer enviar" required>
         </div>
         
         <!--
@@ -35,7 +35,7 @@
         -->
         <div style="display:flex;">
             <button type="submit" class="btn btn-primary" value=True  name="con" style="width:50%; margin-right:2px ;" ><i class="fab fa-rev"></i> Send & Continue</button>
-            <button type="submit" class="btn btn-success"  style="width:50%; margin-left:2px;" ><i class="fas fa-home"></i> Send & Go Back</button>
+            <button type="submit" class="btn btn-success"  style="width:50%; margin-left:2px;" ><i class="fas fa-home"></i> Enviar e Voltar</button>
         </div>
     
     </form>
