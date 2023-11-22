@@ -27,13 +27,13 @@ class TeacherRegister(View):
         password2 = request.POST.get('password2')
         mail_check = User.objects.filter(email = username)
         if mail_check:
-            messages.warning(request,'Sorry! Email already Exits')
+            messages.warning(request,'Ops! Esse Email Já está Cadastrado.')
             return redirect('signup')
         elif password1 != password2:
-            messages.warning(request,'Sorry Password Didnot Match')
+            messages.warning(request,'As senhas estão diferentes')
             return redirect('signup')
         elif len(password1) < 5:
-            messages.warning(request,'Password Too Short! Atleast 5 character nedeed.')
+            messages.warning(request,'Senha muito curta, ao menos 5 caracteres.')
             return redirect('signup')
         else:
             auth_info ={
@@ -45,7 +45,7 @@ class TeacherRegister(View):
             user.save()
         user_obj = Teacher(user=user,name=name)
         user_obj.save()
-        messages.success(request, 'Thanks for Singing !!, Login To continue')
+        messages.success(request, 'Obrigado por se cadastrar, seja bem-vindo(a)')
         return redirect ('login')
 
 
@@ -64,13 +64,13 @@ class StudentRegister(View):
         password2 = request.POST.get('password2')
         mail_check = User.objects.filter(email=username)
         if mail_check:
-            messages.warning(request,'Sorry! Email already Exits')
+            messages.warning(request,'Ops! Esse Email Já está Cadastrado')
             return redirect('student_register')
         elif password1 != password2:
-            messages.warning(request,'Sorry Password Didnot Match')
+            messages.warning(request,'As senhas estão diferentes')
             return redirect('student_register')
         elif len(password1) < 5:
-            messages.warning(request,'Password Too Short! Atleast 5 character nedeed.')
+            messages.warning(request,'Senha muito curta, ao menos 5 caracteres.')
             return redirect('student_register')
 
         else:
@@ -83,7 +83,7 @@ class StudentRegister(View):
             user.save()
         user_obj = Student(user=user, photo=photo,name = name )
         user_obj.save()
-        messages.success(request,'Thanks for Singing !!, Login to Continue')
+        messages.success(request,'Obrigado por se cadastrar, seja bem-vindo(a)')
         return redirect ('login')
 
 # Login View
@@ -105,7 +105,7 @@ class LoginView(View):
                 return redirect ('teacher')
         else:
             if not email_check:
-                messages.warning(request,'Sorry Your Email Didnot Match')
+                messages.warning(request,'Email ou Senha estão incorretos')
                 return redirect('login')
             else:
                 messages.warning(request,'Sorry Your Password Didnot Match')
@@ -137,10 +137,10 @@ class LoginView(View):
                 else:
                     return redirect('teacher')
             else:
-                messages.warning(request,'Sorry Your Email Didnot Match')
+                messages.warning(request,'Email ou Senha estão incorretos')
                 return redirect('login')
         else:
-            messages.warning(request,'Sorry Doesn`t Match')
+            messages.warning(request,'Ops, Não Achamos')
             return redirect('login')
 #Logout View 
 class LogoutView(View):

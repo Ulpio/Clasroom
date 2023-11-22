@@ -54,7 +54,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle"> Paste The Code to join</h5>
+          <h5 class="modal-title" id="exampleModalCenterTitle"> Cole o código para entrar na turma</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -63,10 +63,10 @@
             <form action="{% url 'join' %}" method="POST">
               {% csrf_token %}
                 <div class="form-group">  
-                  <input type="text" class="form-control" id="exampleInputEmail1" name='code' aria-describedby="emailHelp" placeholder="Enter the Code">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name='code' aria-describedby="emailHelp" placeholder="Digite o código">
                 </div>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Join</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Entrar</button>
               </form>
         </div>
       </div>
